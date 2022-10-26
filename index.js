@@ -21,6 +21,12 @@ app.get('/courses/:id', (req,res)=>{
     res.send(course);
 })
 
+app.get('/checkout/:id', (req,res)=>{
+    const id = req.params.id;
+    const course = courses.find(crs => crs.id == id);
+    res.send(course);
+})
+
 app.listen(port, ()=>{
     console.log('Edutech port: ', port);
 })
